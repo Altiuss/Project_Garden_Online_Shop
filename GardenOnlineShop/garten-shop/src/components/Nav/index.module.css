@@ -1,0 +1,68 @@
+.nav {
+  position: relative;
+  width: 1440px;
+  height: 167px;
+  margin: auto;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 19px;
+  left: 26px;
+}
+
+.catalog button {
+  position: absolute;
+  top: 30px;
+  left: 157px;
+  background-color: #339933;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  width: 129px;
+  height: 49px;
+  border: 1px;
+  border-radius: 5px;
+}
+
+.category {
+  color: #339933;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  top: 44px;
+  left: 876px;
+}
+
+.cupons {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  top: 44px;
+  right: 363px;
+}
+
+.discount {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  top: 44px;
+  right: 251px;
+}
+
+.contact {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  top: 44px;
+  right: 114px;
+}
+
+.cart {
+  position: absolute;
+  font-size: 28px;
+  top: 35px;
+  right: 32px;
+}
