@@ -15,7 +15,9 @@ export default function Nav() {
         <Link to="catalog" className={s.catalog}>
           <button>Каталог</button>
         </Link>
-        <p className={s.category}>Категории</p>
+        <Link to="categories" className={s.category}>
+          Категории
+        </Link>
         <p className={s.cupons}>Купон</p>
         <p className={s.discount}>Акции</p>
         <p className={s.contact}>Контакты</p>

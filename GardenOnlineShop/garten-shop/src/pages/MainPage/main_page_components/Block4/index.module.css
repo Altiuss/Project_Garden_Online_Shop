@@ -1,0 +1,13 @@
+.section_for{
+    height: 640px;
+}
+
+
+.container_section_for{
+    background-color:#e6f0e6;
+    display: flex;
+    flex-direction: row;
+    width: 1440px;
+    height: 640px;
+    margin: auto;
+}
