@@ -1,14 +1,20 @@
-.section_for{
+.section_four{
     height: 640px;
 }
 
 
-.container_section_for{
-    background-color:#e6f0e6;
+.container_section_four{
+  
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 1440px;
     height: 640px;
     margin: auto;
+}
+
+.section_four__content{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
 }
 

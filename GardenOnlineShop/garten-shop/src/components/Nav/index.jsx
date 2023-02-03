@@ -12,15 +12,15 @@ export default function Nav() {
         <Link to="/" className={s.logo}>
           <img src={logo} alt="logo" />
         </Link>
-        <Link to="catalog" className={s.catalog}>
-          <button>Каталог</button>
+        <Link to="categories" className={s.catalog}>
+          <button>Catalog</button>
         </Link>
         <Link to="categories" className={s.category}>
-          Категории
+        Catalogs
         </Link>
-        <p className={s.cupons}>Купон</p>
-        <p className={s.discount}>Акции</p>
-        <p className={s.contact}>Контакты</p>
+        <p className={s.cupons}>Coupon</p>
+        <p className={s.discount}>Sale</p>
+        <p className={s.contact}>Contact</p>
         <p className={s.cart}>
           <SlHandbag />
         </p>
