@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import s from "./index.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { load_categories } from "./../../requests/categories_req";
+import { load_categories } from "./../../requests/categories_req"
 import CategoryCard from "./../../components/CategoryCard";
 
+
 export default function CategoriesPage() {
+
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories);
 
   useEffect(() => {
     dispatch(load_categories);
-  }, []);
-
-  console.log(categories);
+  }, [dispatch,]);
 
   return (
     <section className={s.categories_page}>
