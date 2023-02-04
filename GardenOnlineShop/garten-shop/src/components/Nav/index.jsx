@@ -21,9 +21,11 @@ export default function Nav() {
         <p className={s.cupons}>Coupon</p>
         <p className={s.discount}>Sale</p>
         <p className={s.contact}>Contact</p>
+        <Link to="cart" >
         <p className={s.cart}>
           <SlHandbag />
         </p>
+        </Link>
       </nav>
     </header>
   );

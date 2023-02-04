@@ -10,16 +10,19 @@ export default function ProductsPage() {
   
   const { id} = useParams();
   const products = useSelector((state) => state.categoryProducts);
+ 
 
   useEffect(() => {
     dispatch(load_category_products(id));
   }, [dispatch]);
 
-  console.log();
+
+
+
 
   return (
     <section className={s.products_section}>
-      <h1>P{}</h1>
+      <h1>{}</h1>
       <div className={s.products_container}>
         {products.map((el) => (
           <ProductCard key={el.id} {...el} />

@@ -1,0 +1,9 @@
+.product_page{
+    width: 1440px ;
+    margin: 0 auto;
+}
+
+.product_image{
+    width: 710px;
+    height: 710px;
+}

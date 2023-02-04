@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 export default function CategoryCard({ id, title, image }) {
   return (
     <div className={s.catalog_card}>
-      <Link to={`/categories/${id}`} >
-      <img 
-        className={s.image}
-        src={`http://localhost:3333${image}`}
-        alt={title}/> 
+      <Link to={`/categories/${id}`}>
+        <img
+          className={s.image}
+          src={`http://localhost:3333${image}`}
+          alt={title}
+        />
       </Link>
-      
+
       <h3>{title}</h3>
     </div>
   );
