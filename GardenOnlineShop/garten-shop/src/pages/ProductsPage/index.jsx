@@ -7,18 +7,13 @@ import s from "./index.module.css";
 
 export default function ProductsPage() {
   const dispatch = useDispatch();
-  
-  const { id} = useParams();
+
+  const { id } = useParams();
   const products = useSelector((state) => state.categoryProducts);
- 
 
   useEffect(() => {
     dispatch(load_category_products(id));
-  }, [dispatch]);
-
-
-
-
+  }, [dispatch,id]);
 
   return (
     <section className={s.products_section}>

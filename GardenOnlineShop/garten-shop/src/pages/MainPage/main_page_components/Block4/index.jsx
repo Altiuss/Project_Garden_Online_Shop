@@ -22,7 +22,10 @@ export default function Block4() {
       <h1>Sale</h1> </div>
       <div className={s.section_four__content}>
         {
-          products.map(el => <ProductCard key={el.id} {...el} />)
+          products
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 3)
+          .map(el => <ProductCard key={el.id} {...el} />)
         }
       </div>
     </div>
