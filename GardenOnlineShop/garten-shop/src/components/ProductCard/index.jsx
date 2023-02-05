@@ -9,6 +9,8 @@ export default function ProductCard({
   title,
   discont_price,
 }) {
+
+  
   return (
     <div className={s.product_card_container}>
     <div className={s.img_but_cont}>
