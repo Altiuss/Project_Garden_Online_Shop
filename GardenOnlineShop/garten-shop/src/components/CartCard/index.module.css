@@ -1,0 +1,82 @@
+.cart_card {
+  border-top: 1px solid #a7a7a7;
+  border-bottom: 1px solid #a7a7a7;
+  display: flex;
+  flex-direction: row;
+
+  padding: 30px 30px;
+}
+
+.cart_card img {
+  width: 192px;
+  height: 166px;
+  border-radius: 12px;
+
+}
+
+.title {
+  margin-left: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3a3a3a;
+  width: 280px;
+}
+
+.count_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 140px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 25px;
+margin-top: 80px;
+}
+
+.count_container p {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 15px;
+
+}
+
+.price_container{
+position: relative;
+}
+
+.discont_price{
+position: absolute;
+font-size: 40px;
+left: 50px;
+top: 60px;
+}
+
+.price{
+position: absolute;
+color:#8B8B8B;
+font-size: 20px;
+font-weight: 500;
+top: 70px;
+left: 210px;
+text-decoration: line-through;
+
+}
+
+.delete_btn{
+position: absolute;
+font-size: 20px;
+left: 285px;
+cursor: pointer;
+
+
+}
+
+.dolar{
+  font-size: 0.5em;
+
+}
