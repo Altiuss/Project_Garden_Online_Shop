@@ -4,4 +4,6 @@ export const load_products = (dispatch) => {
   fetch("http://localhost:3333/products/all")
     .then((res) => res.json())
     .then((json) => dispatch(loadProducts(json)));
-   };
+};
+
+//vizivaju v mainPage 3 randomnix producta

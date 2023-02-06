@@ -4,4 +4,6 @@ export const load_categories = (dispatch) => {
   fetch("http://localhost:3333/categories/all")
     .then((res) => res.json())
     .then((json) => dispatch(loadCategories(json)));
-   };
+};
+
+//vizivaju main page 4 kartinki i vse v categoris

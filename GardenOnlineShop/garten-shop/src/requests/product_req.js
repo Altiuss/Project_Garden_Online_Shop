@@ -1,5 +1,3 @@
-
-
 import { loadProduct } from "../store/reducers/product";
 
 export const load_product = (id) => {
@@ -13,3 +11,5 @@ export const load_product = (id) => {
       });
   };
 };
+
+// vizivaju v product po odnomu productu
