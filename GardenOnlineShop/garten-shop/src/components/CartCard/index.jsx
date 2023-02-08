@@ -1,6 +1,9 @@
 import React from "react";
 import s from "./index.module.css";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineClose } from "react-icons/ai";
+import { incrementCount , decrementCount, removeFromCart} from "../../store/reducers/cart";
 
 export default function CartCard({
   id,
@@ -10,22 +13,28 @@ export default function CartCard({
   discont_price,
   count,
 }) {
+  const dispatch = useDispatch();
+
+  const increment = () => dispatch(incrementCount(id));
+  const decrement = () => dispatch(decrementCount(id));
+  const remove = () => dispatch(removeFromCart(id));
+
   return (
     <div className={s.cart_card}>
       <img src={`http://localhost:3333${image}`} alt="foto" />
       <div>
         <p className={s.title}>{title}</p>
         <div className={s.count_container}>
-          <p><AiOutlineMinus/></p>
+          <p onClick={decrement}><AiOutlineMinus/></p>
           <p>{count}</p>
-          <p><AiOutlinePlus/></p>
+          <p onClick={increment}><AiOutlinePlus/></p>
         </div>
       </div>
       <div className={s.price_container}>
-         <p className={s.discont_price}>{discont_price}
+         <p className={s.discont_price}>{(discont_price * count).toFixed(2)}
          <span className={s.dolar}>$</span> </p>
          <p className={s.price}>{price}$</p>
-         <p className={s.delete_btn}><AiOutlineClose/></p>
+         <p onClick={remove}className={s.delete_btn}><AiOutlineClose/></p>
       </div>
     </div>
   );

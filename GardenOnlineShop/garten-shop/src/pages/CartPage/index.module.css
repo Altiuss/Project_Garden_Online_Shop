@@ -9,14 +9,22 @@
     color: #3a3a3a;
   }
 
-  .span{
+  /* .span{
     margin-left: 20px;
     font-size: 25px;
     cursor: pointer;
+  } */
+  .span .link{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    margin: 19px 0 0 30px;
+    padding: 10px 0 0 0;
   }
 
   .cart_page_title{
-    width: 785px;
+    width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,14 +44,13 @@
 }
 
 .cart_container {
-
+/* padding: 10px; */
   width: 825px;
 }
 
 .summary_container {
   position: relative;
-
-  border: 2px solid black;
+ border: 2px solid black;
   border-radius: 21px;
   width: 496px;
   height: 393px;
@@ -104,4 +111,10 @@
     font-size: 32px;
     font-weight: 600;
     color: black;
+}
+
+.sum span{
+    font-size: 15px;
+    font-weight: 500;
+   
 }
