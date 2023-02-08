@@ -12,7 +12,7 @@ export default function CategoriesPage() {
 
   useEffect(() => {
     dispatch(load_categories);
-  }, [dispatch,]);
+  }, []);
 
   return (
     <section className={s.categories_page}>
