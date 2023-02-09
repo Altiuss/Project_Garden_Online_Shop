@@ -13,13 +13,14 @@ export default function CategoriesPage() {
   useEffect(() => {
     dispatch(load_categories);
   }, []);
+ 
 
   return (
     <section className={s.categories_page}>
       <h1 className={s.title}>Categories</h1>
       <div className={s.categories_container}>
         {categories.map((el) => (
-          <CategoryCard key={el.id} {...el} />
+          <CategoryCard key={el.id} {...el}  />
         ))}
       </div>
     </section>

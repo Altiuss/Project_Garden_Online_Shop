@@ -15,27 +15,51 @@ export default function ProductPage() {
 
   useEffect(() => {
     dispatch(load_product(id));
-  }, [dispatch,id]);
+  }, [dispatch, id]);
 
   const { name, price, description, image, discont_price, title } = product;
 
   const add_to_cart = () =>
-    dispatch(addToCart({ id: +id, image, price, name, description, discont_price ,title}));
+    dispatch(
+      addToCart({
+        id: +id,
+        image,
+        price,
+        name,
+        description,
+        discont_price,
+        title,
+      })
+    );
 
   console.log(product);
   return (
     <section className={s.product_page}>
       <h2>Name: {title}</h2>
-      <img
-        className={s.product_image}
-        src={`http://localhost:3333${image}`}
-        alt="foto"
-      />
-      <p>Price: {price}</p>
-      <Link to="/cart">
-        <button onClick={add_to_cart}>To cart</button>
-      </Link>
-      <p>Description {description}</p>
+      <div className={s.product_container}>
+        <img
+          className={s.product_image}
+          src={`http://localhost:3333${image}`}
+          alt="foto"
+        />
+        <div className={s.description_container}>
+          <div className={s.price_container}>
+            <p>
+              {discont_price}
+              <span>$</span>{" "}
+            </p>
+            <p>{price}$</p>
+            <p> -7%</p>
+          </div>
+          <Link to="/cart">
+            <button onClick={add_to_cart}>To cart</button>
+          </Link>
+          <div className={s.descr}>
+            <h3> Description</h3>
+            <p>Description {description}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

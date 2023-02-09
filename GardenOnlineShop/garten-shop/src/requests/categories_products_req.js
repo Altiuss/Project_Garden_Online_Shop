@@ -5,7 +5,13 @@ export const load_category_products = (id) => {
     fetch(`http://localhost:3333/categories/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        dispatch(loadCategoryProducts(data));
+        const payload = data.map((el) => ({
+          ...el,
+          hide: false,}))
+
+
+
+        dispatch(loadCategoryProducts(payload));
       });
   };
 };
