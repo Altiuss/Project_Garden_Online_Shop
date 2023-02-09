@@ -12,7 +12,7 @@ export default function CartPage() {
   // console.log(cart.price);
 
   const total = cart
-    .reduce((acc, el) => acc + el.discont_price * el.count, 0)
+    .reduce((prev, el) => prev + el.discont_price * el.count, 0)
     .toFixed(2);
 
   return (
@@ -23,7 +23,9 @@ export default function CartPage() {
         <p>
           Back to the store
           <span className={s.span}>
-            <Link className={s.link} to="/categories">&gt;</Link>
+            <Link className={s.link} to="/categories">
+              &gt;
+            </Link>
           </span>
         </p>
       </div>
