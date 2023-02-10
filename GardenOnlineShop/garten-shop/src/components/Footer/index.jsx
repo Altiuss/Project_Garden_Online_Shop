@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./index.module.css";
+import { Link } from "react-router-dom";
 import { SlSocialInstagram } from "react-icons/sl";
 import { SiWhatsapp } from "react-icons/si";
 

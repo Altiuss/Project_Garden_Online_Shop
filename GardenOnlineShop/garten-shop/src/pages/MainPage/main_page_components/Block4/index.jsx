@@ -12,7 +12,6 @@ export default function Block4() {
     dispatch(load_products);
   }, []);
 
-
   return (
     <section className={s.section_four}>
       <div className={s.container_section_four}>

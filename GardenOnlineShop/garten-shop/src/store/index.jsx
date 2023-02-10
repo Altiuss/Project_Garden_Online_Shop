@@ -4,6 +4,7 @@ import { productsReducer } from "./reducers/products";
 import { categoryProductsReducer } from "./reducers/products_from_category";
 import { productReducer } from "./reducers/product";
 import { cartReducer } from "./reducers/cart";
+import {telephoneNumbersReducer} from "./reducers/phone";
 import thunk from 'redux-thunk'
 
 
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     products : productsReducer,
     categoryProducts : categoryProductsReducer,
     product : productReducer,
-    cart : cartReducer
+    cart : cartReducer,
+    telephoneNumber: telephoneNumbersReducer
   
 });
 

@@ -1,11 +1,17 @@
 import React from "react";
 import s from "./index.module.css";
+import { useSelector } from "react-redux";
 import logo from "./media/image 1.png";
 import { Link } from "react-router-dom";
 
 import { SlHandbag } from "react-icons/sl";
 
 export default function Nav() {
+
+  const cart = useSelector((state) => state.cart);
+  const totalCount = cart.reduce((sum, item) => sum + item.count, 0);
+
+  console .log(totalCount);
   return (
     <header>
       <nav className={s.nav}>
@@ -23,6 +29,7 @@ export default function Nav() {
         <p className={s.contact}>Contact</p>
         <Link to="cart" >
         <p className={s.cart}>
+          <span className={s.cart_count}>{totalCount}</span>
           <SlHandbag />
         </p>
         </Link>

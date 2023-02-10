@@ -62,7 +62,16 @@
 
 .cart {
   position: absolute;
-  font-size: 28px;
+  font-size: 38px;
   top: 35px;
   right: 32px;
+}
+
+.cart_count{
+  position: absolute;
+  color: red;
+  font-size: 18px;
+  font-weight: 900;
+  top: 20px;
+  right: 14px;
 }

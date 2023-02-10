@@ -9,12 +9,11 @@ export const loadCategoryProducts = (payload) => ({
   type: LOAD_CATEGORY_PRODUCTS,
   payload,
 });
-export const sortProducts = (payload) => ({ type:  SORT_PRODUCTS , payload });
+export const sortProducts = (payload) => ({ type: SORT_PRODUCTS, payload });
 export const searchByPrice = (payload) => ({
-    type: SEARCH_BY_PRICE,
-    payload,
-    });
-
+  type: SEARCH_BY_PRICE,
+  payload,
+});
 
 export const categoryProductsReducer = (state = defaultState, action) => {
   if (action.type === LOAD_CATEGORY_PRODUCTS) {
@@ -31,18 +30,14 @@ export const categoryProductsReducer = (state = defaultState, action) => {
     } else {
       return state;
     }
-    } else if (action.type === SEARCH_BY_PRICE) {
-      return [...state].map((el) => {
-        if (el.price >= action.payload.min && el.price <= action.payload.max) {
-            return { ...el, hide: false };
-            } else {
-            return { ...el, hide: true };
-            }
-        });
-
-        
-
-
+  } else if (action.type === SEARCH_BY_PRICE) {
+    return [...state].map((el) => {
+      if (el.price >= action.payload.min && el.price <= action.payload.max) {
+        return { ...el, hide: false };
+      } else {
+        return { ...el, hide: true };
+      }
+    });
   } else {
     return state;
   }
