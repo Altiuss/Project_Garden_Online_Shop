@@ -11,7 +11,7 @@ export default function Nav() {
   const cart = useSelector((state) => state.cart);
   const totalCount = cart.reduce((sum, item) => sum + item.count, 0);
 
-  console .log(totalCount);
+  
   return (
     <header>
       <nav className={s.nav}>

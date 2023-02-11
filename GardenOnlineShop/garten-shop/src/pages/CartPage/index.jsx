@@ -1,23 +1,23 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../../components/CartCard";
 import s from "./index.module.css";
 import { Link } from "react-router-dom";
+import { persistor } from "../../store";
 
 export default function CartPage() {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
-
-
-  // console.log(cart);
-  // console.log(cart.length);
-  // console.log(cart.price);
-
-  const total = cart
+ const total = cart
     .reduce((prev, el) => prev + el.discont_price * el.count, 0)
     .toFixed(2);
 
-  return (
+    useEffect(() => {
+      persistor.persist();
+    }, [cart, dispatch]);
+
+return (
     <section className={s.cart_page}>
       <h1 className={s.h}>Shopping cart</h1>
       <div className={s.cart_page_title}>
