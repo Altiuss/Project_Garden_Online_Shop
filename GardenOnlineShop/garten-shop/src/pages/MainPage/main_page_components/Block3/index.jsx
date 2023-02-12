@@ -31,7 +31,7 @@ export default function Block3() {
   };
   console.log(phone);
 
-  return <section className={s.section}>
+  return <section id="coupon" className={s.section}>
     <div className={s.container}>
       <div className={s.left}>
         <img src={gnom} alt="" />

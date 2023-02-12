@@ -6,7 +6,7 @@ import { SiWhatsapp } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className={s.footer}>
+    <footer id="footer" className={s.footer}>
       <div className={s.left_footer}>
         <h3 className={s.contact}>Contact</h3>
         <p className={s.phone}>+49 999 999 99 99</p>

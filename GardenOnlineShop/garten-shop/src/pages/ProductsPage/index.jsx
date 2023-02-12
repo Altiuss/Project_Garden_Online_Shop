@@ -26,7 +26,7 @@ export default function ProductsPage({ title }) {
     const min = e.target.min.value || 0;
     const max = e.target.max.value || Infinity;
     dispatch(searchByPrice({ min, max }));
-    console.log(min, max);
+  
   };
 
 
