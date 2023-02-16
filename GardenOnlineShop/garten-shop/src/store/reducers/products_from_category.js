@@ -32,7 +32,7 @@ export const categoryProductsReducer = (state = defaultState, action) => {
     }
   } else if (action.type === SEARCH_BY_PRICE) {
     return [...state].map((el) => {
-      if (el.price >= action.payload.min && el.price <= action.payload.max) {
+      if (el.discount_price >= action.payload.min && el.discount_price <= action.payload.max) {
         return { ...el, hide: false };
       } else {
         return { ...el, hide: true };

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import logo from "./media/image 1.png";
 import { Link } from "react-router-dom";
 import { SlHandbag } from "react-icons/sl";
-import {Link as LinkScroll} from "react-scroll";
+import { HashLink } from 'react-router-hash-link';
 
 
 export default function Nav() {
@@ -23,21 +23,21 @@ export default function Nav() {
           <button>Catalog</button>
         </Link>
 
-        <Link to="categories"  className={s.category}>
-          Catalogs
+        <Link to="sale"  className={s.category}>
+         %Sale%
         </Link>
 
-        <LinkScroll to="coupon"  smooth={true} offset={-100} duration={1000}>
+        <HashLink to="/#coupon"  smooth={true} offset={-100} duration={1000}>
           <p className={s.cupons}>Coupon</p>
-        </LinkScroll>
+        </HashLink>
 
-        <LinkScroll to="sale"   >
+        <HashLink to="/#sale" smooth={true} offset={-100} duration={1000}  >
           <p className={s.discount}>Sale</p>
-        </LinkScroll>
+        </HashLink>
 
-        <LinkScroll to="footer" smooth={true} offset={-100} duration={1000} > 
+        <HashLink to="/#footer" smooth={true} duration={1000} > 
           <p className={s.contact}>Contact</p>
-        </LinkScroll>
+        </HashLink>
 
         <Link to="cart">
           <p className={s.cart}>

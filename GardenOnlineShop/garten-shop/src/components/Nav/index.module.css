@@ -25,6 +25,7 @@
   height: 49px;
   border: 1px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .category {
@@ -34,7 +35,22 @@
   position: absolute;
   top: 44px;
   left: 876px;
+  text-decoration: none;
+  animation: blink-animation 1s infinite;
 }
+
+@keyframes blink-animation {
+  0% {
+    color: red;
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    color: red;
+  }
+}
+
 
 .cupons {
   position: absolute;
@@ -42,6 +58,8 @@
   font-weight: 500;
   top: 44px;
   right: 363px;
+  text-decoration: none;
+
 }
 
 .discount {
@@ -58,6 +76,7 @@
   font-weight: 500;
   top: 44px;
   right: 114px;
+  text-decoration: none;
 }
 
 .cart {

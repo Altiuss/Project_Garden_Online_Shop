@@ -5,6 +5,7 @@ import CategoriesPage from "./pages/CategoriesPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import SalePge from "./pages/SalePage";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="categories/:id" element={<ProductsPage />}  />
           <Route path="products/:id" element={<ProductPage/>} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="sale" element={<SalePge/>} />
         </Route>
       </Routes>
     </div>

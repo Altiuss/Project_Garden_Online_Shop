@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { load_category_products } from "./../../requests/categories_products_req";
+import { load_products } from "./../../requests/products_req";
 import { useParams } from "react-router-dom";
 import ProductCard from "./../../components/ProductCard";
 import { sortProducts } from "../../store/reducers/products_from_category";
@@ -10,14 +10,15 @@ import s from "./index.module.css";
 export default function ProductsPage({ title }) {
   const dispatch = useDispatch();
 
-  const { id } = useParams();
-  const products = useSelector((state) => state.categoryProducts);
+  
+  const products = useSelector((state) => state.products);
 
-  const [discontItems, setDicontItems] = useState(false);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(Infinity);
 
   useEffect(() => {
-    dispatch(load_category_products(id));
-  }, [dispatch, id]);
+    dispatch(load_products);
+  }, [dispatch]);
 
   const sort_products = (e) => {
     dispatch(sortProducts(e.target.value));
@@ -25,51 +26,58 @@ export default function ProductsPage({ title }) {
 
   const search = (e) => {
     e.preventDefault();
-    const min = e.target.min.value || 0;
-    const max = e.target.max.value || Infinity;
+    // const min = e.target.min.value || 0;
+    // const max = e.target.max.value || Infinity;
     dispatch(searchByPrice({ min, max }));
+  
   };
 
-  const handleDiscontedItems = (e) => {
-    setDicontItems(e.target.checked);
-    search();
+  const handleMinChange = (e) => {
+    setMin(e.target.value);
+    dispatch(searchByPrice({ min: e.target.value, max }));
   };
+
+  const handleMaxChange = (e) => {
+    setMax(e.target.value);
+    dispatch(searchByPrice({ min, max: e.target.value }));
+  };
+
+
+  const discontProducts = products.filter((el) => el.price !== el.discont_price);
 
 
   return (
     <section className={s.products_section}>
-      <h1>Hallo{title}</h1>
+      <h1>Sale{title}</h1>
       <div className={s.search_panel}>
         <div className={s.search_container}>
-          <form className={s.search_form} onInput={search}>
+          <form className={s.search_form} onSubmit={search} >
             <span>Price</span>
-            <input type="number" name="min" placeholder="from" />
-            <input type="number" name="max" placeholder="to" />
-            
-          </form>
+            <input type="number" name="min" placeholder="from" onInput={handleMinChange} />
+            <input type="number" name="max" placeholder="to"  onInput={handleMaxChange}/>
+           </form>
         </div>
 
-        <div className={s.discounted_items_container}>
-          <p>Discounted items</p>
-          <input type="checkbox"  onChange={handleDiscontedItems}/>
-        </div>
+       
 
         <div className={s.select_container}>
           <span>Sorted</span>
-          <select onInput={sort_products} className={s.select}>
+          <select onInput={sort_products} className={s.select} >
             <option value="default"> by default</option>
             <option value="price"> by price</option>
             <option value="title">by name</option>
+            <option value="discont">by discont</option>
+
           </select>
         </div>
       </div>
 
       <div className={s.products_container}>
-        {products
-          .filter((el) => !el.hide)
-          .map((el) => (
-            <ProductCard key={el.id} {...el} />
-          ))}
+        {discontProducts
+        .filter((el) => !el.hide)
+        .map((el) => (
+          <ProductCard key={el.id} {...el} />
+        ))}
       </div>
     </section>
   );
