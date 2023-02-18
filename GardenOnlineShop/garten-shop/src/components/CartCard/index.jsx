@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./index.module.css";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineClose } from "react-icons/ai";
 import { incrementCount , decrementCount, removeFromCart} from "../../store/reducers/cart";
@@ -33,7 +32,10 @@ export default function CartCard({
       <div className={s.price_container}>
          <p className={s.discont_price}>{(discont_price * count).toFixed(2)}
          <span className={s.dolar}>$</span> </p>
-         <p className={s.price}>{price}$</p>
+         <p className={`${s.price} ${price === discont_price ? s.hidden : ''}`}>
+  {price}$
+</p>
+
          <p onClick={remove}className={s.delete_btn}><AiOutlineClose/></p>
       </div>
     </div>

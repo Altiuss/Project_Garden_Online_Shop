@@ -40,3 +40,5 @@ export default function ProductCard({
     </div>
   );
 }
+ // const min = e.target.min.value || 0;
+    // const max = e.target.max.value || Infinity;

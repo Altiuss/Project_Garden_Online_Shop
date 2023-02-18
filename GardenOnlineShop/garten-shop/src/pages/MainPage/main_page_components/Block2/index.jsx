@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import s from "./index.module.css";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import CategoryCard from "../../../../components/CategoryCard";
 import { load_categories } from "../../../../requests/categories_req";
@@ -10,7 +11,7 @@ export default function Block2() {
 
   useEffect(() => {
     dispatch(load_categories);
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className={s.section}>
@@ -18,7 +19,9 @@ export default function Block2() {
         <div className={s.block}>
           <h1>Catalog</h1>
 
-          <button>All categories </button>
+        <Link  to="categories">
+        <button>All categories </button>
+        </Link>
         </div>
         <div className={s.catalog}>
           {categories.slice(0, 4).map((el) => (

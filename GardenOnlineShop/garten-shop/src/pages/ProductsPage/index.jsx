@@ -7,17 +7,30 @@ import { sortProducts } from "../../store/reducers/products_from_category";
 import { searchByPrice } from "../../store/reducers/products_from_category";
 import s from "./index.module.css";
 
-export default function ProductsPage({ title }) {
+export default function ProductsPage() {
   const dispatch = useDispatch();
 
   const { id } = useParams();
+  const categories = useSelector((state) => state.categories);
   const products = useSelector((state) => state.categoryProducts);
+  const [showOnlyDiscounted, setShowOnlyDiscounted] = useState(false);
 
-  const [discontItems, setDicontItems] = useState(false);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(Infinity);
+
+  const discountedItems = showOnlyDiscounted
+    ? products.filter(
+        (el) => Math.round(((el.price - el.discont_price) / el.price) * 100) > 0
+      )
+    : products;
+
+  const handleCheckboxChange = (event) => {
+    setShowOnlyDiscounted(event.target.checked);
+  };
 
   useEffect(() => {
     dispatch(load_category_products(id));
-  }, [dispatch, id]);
+  }, [id, dispatch]);
 
   const sort_products = (e) => {
     dispatch(sortProducts(e.target.value));
@@ -25,35 +38,52 @@ export default function ProductsPage({ title }) {
 
   const search = (e) => {
     e.preventDefault();
-    const min = e.target.min.value || 0;
-    const max = e.target.max.value || Infinity;
     dispatch(searchByPrice({ min, max }));
   };
 
-  const handleDiscontedItems = (e) => {
-    setDicontItems(e.target.checked);
-    search();
+  const handleMinChange = (e) => {
+    setMin(e.target.value);
+    dispatch(searchByPrice({ min: e.target.value, max }));
   };
+
+  const handleMaxChange = (e) => {
+    setMax(e.target.value);
+    dispatch(searchByPrice({ min, max: e.target.value }));
+  };
+  
+  const element = categories.find((el) => el.id === +id);
+  console.log(element.title);
 
 
   return (
     <section className={s.products_section}>
-      <h1>Hallo{title}</h1>
+      <h1> {element.title} </h1>
       <div className={s.search_panel}>
         <div className={s.search_container}>
-          <form className={s.search_form} onInput={search}>
+          <form className={s.search_form} onSubmit={search}>
             <span>Price</span>
-            <input type="number" name="min" placeholder="from" />
-            <input type="number" name="max" placeholder="to" />
-            
+            <input
+              type="number"
+              name="min"
+              placeholder="from"
+              onInput={handleMinChange}
+            />
+            <input
+              type="number"
+              name="max"
+              placeholder="to"
+              onInput={handleMaxChange}
+            />
           </form>
         </div>
-
         <div className={s.discounted_items_container}>
           <p>Discounted items</p>
-          <input type="checkbox"  onChange={handleDiscontedItems}/>
+          <input
+            type="checkbox"
+            checked={showOnlyDiscounted}
+            onChange={handleCheckboxChange}
+          />
         </div>
-
         <div className={s.select_container}>
           <span>Sorted</span>
           <select onInput={sort_products} className={s.select}>
@@ -63,9 +93,8 @@ export default function ProductsPage({ title }) {
           </select>
         </div>
       </div>
-
       <div className={s.products_container}>
-        {products
+        {discountedItems
           .filter((el) => !el.hide)
           .map((el) => (
             <ProductCard key={el.id} {...el} />

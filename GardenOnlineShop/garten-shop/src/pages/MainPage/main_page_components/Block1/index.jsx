@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./index.module.css";
+import { Link } from "react-router-dom";
 
 export default function Block1() {
   return (
@@ -9,7 +10,9 @@ export default function Block1() {
           <h1 className={s.h1}>Sale </h1>
           <h2 className={s.h2}>New season</h2>
           <div className={s.button_cont}>
-            <button>Sale</button>
+           <Link to="sale">
+           <button>Sale</button>
+            </Link>
             <button>Learn more</button>
           </div>
         </div>

@@ -7,10 +7,8 @@ export const load_category_products = (id) => {
       .then((data) => {
         const payload = data.map((el) => ({
           ...el,
-          hide: false,}))
-
-
-
+          hide: false,
+        }));
         dispatch(loadCategoryProducts(payload));
       });
   };

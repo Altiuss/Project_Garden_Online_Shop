@@ -17,12 +17,10 @@
 }
 
 .search_panel {
- 
-  display: flex;
+ display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 45px 0 34px 0;
- 
   width: 1050px;
 }
 
@@ -63,6 +61,17 @@
 .discounted_items_container p {
   font-size: 20px;
   font-weight: 600;
+}
+
+.discounted_items_container input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 20px;
+  padding: 7px;
+  margin: 0 0 0 10px;
 }
 
 .select_container{
