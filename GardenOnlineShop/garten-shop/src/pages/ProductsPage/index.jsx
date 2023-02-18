@@ -52,8 +52,6 @@ export default function ProductsPage() {
   };
   
   const element = categories.find((el) => el.id === +id);
-  console.log(element.title);
-
 
   return (
     <section className={s.products_section}>
