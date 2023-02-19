@@ -16,6 +16,7 @@ export default function Block4() {
     .filter((el) => el.price !== el.discont_price)
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
+    
   return (
     <section id="sale" className={s.section_four}>
       <div className={s.container_section_four}>
