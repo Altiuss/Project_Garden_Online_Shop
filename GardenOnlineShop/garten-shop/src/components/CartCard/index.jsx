@@ -45,7 +45,6 @@ export default function CartCard({
         <p className={`${s.price} ${price === discont_price ? s.hidden : ""}`}>
           {price}$
         </p>
-
         <p onClick={remove} className={s.delete_btn}>
           <AiOutlineClose />
         </p>
