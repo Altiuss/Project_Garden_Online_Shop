@@ -4,7 +4,6 @@
 }
 
 .container {
-
   display: flex;
   flex-direction: row;
   width: 1440px;
@@ -23,7 +22,6 @@
 }
 
 .right h1 {
-
   color: rgb(255, 255, 255);
   font-size: 90px;
   margin: 45px 0 0 -30px;
@@ -34,13 +32,12 @@
   color: white;
   font-size: 50px;
   letter-spacing: 0.07em;
-
 }
 
 .right form {
   display: flex;
   flex-direction: column;
-  margin-top: 46px ;
+  margin-top: 46px;
 }
 
 .right form input {
@@ -51,7 +48,7 @@
   outline: none;
   font-size: 30px;
   font-weight: 600;
-  color:#6C6C6C;
+  color: #6c6c6c;
   margin-bottom: 20px;
   padding-left: 50px;
 }
@@ -59,22 +56,21 @@
 .right form button {
   width: 450px;
   height: 75px;
-  border : 3px solid white ;
+  border: 3px solid white;
   border-radius: 25px;
-  background-color:transparent;
+  background-color: transparent;
   color: white;
   font-size: 30px;
   font-weight: 700;
   cursor: pointer;
 }
 
- .error {
+.error {
   position: absolute;
   color: rgb(242, 11, 11);
   font-size: 20px;
   margin-top: -40px;
   animation: blink 1s linear infinite;
-  
 }
 
 @keyframes blink {

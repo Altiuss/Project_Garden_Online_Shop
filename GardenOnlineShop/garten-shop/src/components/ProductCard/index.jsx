@@ -13,7 +13,8 @@ export default function ProductCard({
 }) {
   const dispatch = useDispatch();
 
-  const add_to_cart = () => dispatch(addToCart({ id, image, price, title, discont_price }));
+  const add_to_cart = () =>
+    dispatch(addToCart({ id, image, price, title, discont_price }));
 
   const discont = Math.round(((price - discont_price) / price) * 100);
 
@@ -32,13 +33,14 @@ export default function ProductCard({
         </button>
       </div>
       <div className={s.price_container}>
-      <p className={s.discont_price}>{discont_price}<span>$</span></p>
-      {discont !== 0 && <p className={s.price}>{price}$</p>}
-      {discont !== 0 && <p className={s.discont}>-{discont}%</p>}
+        <p className={s.discont_price}>
+          {discont_price}
+          <span>$</span>
+        </p>
+        {discont !== 0 && <p className={s.price}>{price}$</p>}
+        {discont !== 0 && <p className={s.discont}>-{discont}%</p>}
       </div>
       <p className={s.title}>{title}</p>
     </div>
   );
 }
- // const min = e.target.min.value || 0;
-    // const max = e.target.max.value || Infinity;

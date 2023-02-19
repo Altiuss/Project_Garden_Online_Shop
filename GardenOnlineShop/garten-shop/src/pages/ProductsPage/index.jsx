@@ -50,7 +50,7 @@ export default function ProductsPage() {
     setMax(e.target.value);
     dispatch(searchByPrice({ min, max: e.target.value }));
   };
-  
+
   const element = categories.find((el) => el.id === +id);
 
   return (

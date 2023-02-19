@@ -7,7 +7,6 @@ import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 import SalePge from "./pages/SalePage";
 
-
 function App() {
   return (
     <div>
@@ -15,10 +14,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="categories" element={<CategoriesPage />} />
-          <Route path="categories/:id" element={<ProductsPage />}  />
-          <Route path="products/:id" element={<ProductPage/>} />
+          <Route path="categories/:id" element={<ProductsPage />} />
+          <Route path="products/:id" element={<ProductPage />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="sale" element={<SalePge/>} />
+          <Route path="sale" element={<SalePge />} />
         </Route>
       </Routes>
     </div>

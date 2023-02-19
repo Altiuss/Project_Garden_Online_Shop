@@ -5,5 +5,3 @@ export const load_categories = (dispatch) => {
     .then((res) => res.json())
     .then((json) => dispatch(loadCategories(json)));
 };
-
-//vizivaju main page 4 kartinki i vse v categoris

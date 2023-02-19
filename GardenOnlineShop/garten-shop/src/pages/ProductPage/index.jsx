@@ -32,7 +32,8 @@ export default function ProductPage() {
       })
     );
 
-  console.log(product);
+  const discont = Math.round(((price - discont_price) / price) * 100);
+
   return (
     <section className={s.product_page}>
       <h2>Name: {title}</h2>
@@ -48,8 +49,8 @@ export default function ProductPage() {
               {discont_price}
               <span>$</span>{" "}
             </p>
-            <p>{price}$</p>
-            <p> -7%</p>
+            {discont !== 0 && <p>{price}$</p>}
+            {discont !== 0 && <p>-{discont}%</p>}
           </div>
           <Link to="/cart">
             <button onClick={add_to_cart}>To cart</button>

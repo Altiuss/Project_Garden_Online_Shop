@@ -6,6 +6,7 @@ import { addTelephoneNumber } from "../../store/reducers/phone";
 import s from "./index.module.css";
 import { Link } from "react-router-dom";
 import { persistor } from "../../store";
+import { emptyCart } from "../../store/reducers/cart";
 
 export default function CartPage() {
   const dispatch = useDispatch();
@@ -42,6 +43,16 @@ export default function CartPage() {
   useEffect(() => {
     persistor.persist();
   }, [cart, dispatch]);
+
+  const handleEmptyCart = () => {
+    dispatch(emptyCart());
+  };
+
+  const handleComb = (event) => {
+    handleSubmit(event);
+    if (!validateTelephoneNumber(telephoneNumber)) return;
+    handleEmptyCart();
+  };
 
   return (
     <section className={s.cart_page}>
@@ -81,7 +92,7 @@ export default function CartPage() {
               onChange={(e) => setTelephoneNumber(e.target.value)}
               onFocus={handleFocus}
             />
-            <button onClick={handleSubmit}>Order</button>
+            <button onClick={handleComb}>Order</button>
           </form>
         </div>
       </div>

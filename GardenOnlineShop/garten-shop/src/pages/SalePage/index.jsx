@@ -14,12 +14,9 @@ export default function ProductsPage({ title }) {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(Infinity);
 
- 
-
   useEffect(() => {
     dispatch(load_products);
-
- }, []);
+  }, []);
 
   const sort_products = (e) => {
     dispatch(sortProducts(e.target.value));
@@ -27,7 +24,7 @@ export default function ProductsPage({ title }) {
 
   const search = (e) => {
     e.preventDefault();
- dispatch(searchByPrice({ min, max }));
+    dispatch(searchByPrice({ min, max }));
   };
 
   const handleMinChange = (e) => {

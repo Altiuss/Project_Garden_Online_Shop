@@ -4,7 +4,6 @@
 }
 
 .section_one_container {
-
   display: flex;
   width: 1440px;
   height: 600px;
@@ -57,4 +56,3 @@
   background-position: center -60px;
   width: 640px;
 }
-

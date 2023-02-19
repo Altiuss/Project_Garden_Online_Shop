@@ -1,8 +1,12 @@
 import React from "react";
 import s from "./index.module.css";
 import { useDispatch } from "react-redux";
-import { AiOutlineMinus, AiOutlinePlus,AiOutlineClose } from "react-icons/ai";
-import { incrementCount , decrementCount, removeFromCart} from "../../store/reducers/cart";
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import {
+  incrementCount,
+  decrementCount,
+  removeFromCart,
+} from "../../store/reducers/cart";
 
 export default function CartCard({
   id,
@@ -24,19 +28,27 @@ export default function CartCard({
       <div>
         <p className={s.title}>{title}</p>
         <div className={s.count_container}>
-          <p onClick={decrement}><AiOutlineMinus/></p>
+          <p onClick={decrement}>
+            <AiOutlineMinus />
+          </p>
           <p>{count}</p>
-          <p onClick={increment}><AiOutlinePlus/></p>
+          <p onClick={increment}>
+            <AiOutlinePlus />
+          </p>
         </div>
       </div>
       <div className={s.price_container}>
-         <p className={s.discont_price}>{(discont_price * count).toFixed(2)}
-         <span className={s.dolar}>$</span> </p>
-         <p className={`${s.price} ${price === discont_price ? s.hidden : ''}`}>
-  {price}$
-</p>
+        <p className={s.discont_price}>
+          {(discont_price * count).toFixed(2)}
+          <span className={s.dolar}>$</span>{" "}
+        </p>
+        <p className={`${s.price} ${price === discont_price ? s.hidden : ""}`}>
+          {price}$
+        </p>
 
-         <p onClick={remove}className={s.delete_btn}><AiOutlineClose/></p>
+        <p onClick={remove} className={s.delete_btn}>
+          <AiOutlineClose />
+        </p>
       </div>
     </div>
   );

@@ -13,5 +13,3 @@ export const load_category_products = (id) => {
       });
   };
 };
-
-// vizivaju v categoriesPage products

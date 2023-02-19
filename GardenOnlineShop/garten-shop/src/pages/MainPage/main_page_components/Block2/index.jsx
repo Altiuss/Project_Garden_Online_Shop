@@ -19,9 +19,9 @@ export default function Block2() {
         <div className={s.block}>
           <h1>Catalog</h1>
 
-        <Link  to="categories">
-        <button>All categories </button>
-        </Link>
+          <Link to="categories">
+            <button>All categories </button>
+          </Link>
         </div>
         <div className={s.catalog}>
           {categories.slice(0, 4).map((el) => (

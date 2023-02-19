@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../../../../components/ProductCard";
 import { load_products } from "../../../../requests/products_req";
@@ -12,15 +12,10 @@ export default function Block4() {
     dispatch(load_products);
   }, [dispatch]);
 
-
   let array = products
     .filter((el) => el.price !== el.discont_price)
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
-  console.log(array);
-
-  
-
   return (
     <section id="sale" className={s.section_four}>
       <div className={s.container_section_four}>
@@ -32,7 +27,6 @@ export default function Block4() {
             <ProductCard key={el.id} {...el} />
           ))}
         </div>
-       
       </div>
     </section>
   );

@@ -5,5 +5,3 @@ export const load_products = (dispatch) => {
     .then((res) => res.json())
     .then((json) => dispatch(loadProducts(json)));
 };
-
-//vizivaju v mainPage 3 randomnix producta
