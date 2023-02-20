@@ -11,7 +11,7 @@ export default function Block3() {
   const phone = useSelector((state) => state.telephoneNumber);
 
   const validateTelephoneNumber = (telephoneNumber) => {
-    const telephoneNumberRegex = /^\+49\d{10}$/;
+    const telephoneNumberRegex = /^\+49\d{10}$/ ;
     return telephoneNumberRegex.test(telephoneNumber);
   };
 

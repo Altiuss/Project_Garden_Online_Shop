@@ -19,15 +19,17 @@ const checkProduct = (state, payload) => {
   const productInState = state.find((el) => el.id === payload.id);
   if (productInState) {
     productInState.count += 1;
+   
     return [...state];
   } else {
+    
     return [...state, { ...payload, count: 1 }];
   }
 };
 
 export const cartReducer = (state = defaultState, action) => {
   if (action.type === ADD_TO_CART) {
-    return checkProduct(state, action.payload);
+  return checkProduct(state, action.payload);
   } else if (action.type === REMOVE_FROM_CART) {
     return state.filter((el) => el.id !== action.payload);
   } else if (action.type === INCREMENT_COUNT) {
