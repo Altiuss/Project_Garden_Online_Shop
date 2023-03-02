@@ -8,7 +8,7 @@ import s from "./index.module.css";
 
 export default function MainPage() {
   return (
-    <main>
+    <main className={s.colector}>
       <Block1 />
       <Block2 />
       <Block3 />
